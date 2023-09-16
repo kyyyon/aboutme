@@ -1,0 +1,92 @@
+:root {
+    /** This is the number of characters in the text */
+    --characters: 24;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 2.25rem
+        /* 36px */
+    ;
+    --tw-text-opacity: 1;
+    color: rgb(244 114 182 / var(--tw-text-opacity));
+}
+
+.type {
+    max-width: 0;
+    animation: typing 3s steps(var(--characters)) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container:after {
+    content: " |";
+    animation: blink 1s infinite;
+    animation-timing-function: step-end;
+}
+
+@keyframes typing {
+
+    75%,
+    100% {
+        max-width: calc(var(--characters) * 1ch);
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 1680px) {
+    html {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 1280px) {
+    html {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 980px) {
+    html {
+        font-size: 9pt;
+    }
+}
+
+@media (max-width: 736px) {
+    html {
+        font-size: 8pt;
+    }
+
+    #wrapper {
+        padding: 0rem 0rem 0rem 0rem;
+    }
+
+    #main>.inner {
+        --padding-horizontal: 1.75rem;
+        --padding-vertical: 2.25rem;
+        --spacing: 0.75rem;
+    }
+}
